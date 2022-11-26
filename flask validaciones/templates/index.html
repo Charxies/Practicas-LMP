@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} introduzca los datos{% endblock %}</h1>
+
+    <form method="POST" action="/">
+        {{ form.csrf_token }}
+        <p>
+            {{ form.nombre.label }}
+            {{ form.nombre(size=30) }}
+        </p>
+        {% if form.nombre.errors %}
+            <ul class="errors">
+                {% for error in form.nombre.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <p>
+            {{ form.apellidop.label }}
+            {{ form.apellidop(size=30) }}
+        </p>
+        {% if form.apellidop.errors %}
+            <ul class="errors">
+                {% for error in form.apellidop.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <p>
+            {{ form.apellidom.label }}
+            {{ form.apellidom(size=30) }}
+        </p>
+        {% if form.apellidom.errors %}
+            <ul class="errors">
+                {% for error in form.apellidom.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <p>
+            {{ form.email.label }}
+            {{ form.email(size=50) }}
+        </p>
+        {% if form.email.errors %}
+            <ul class="errors">
+                {% for error in form.email.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <p>
+            {{ form.telefono.label }}
+            {{ form.telefono() }}
+        </p>
+
+        {% if form.telefono.errors %}
+            <ul class="errors">
+                {% for error in form.telefono.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p>
+            {{ form.sexo.label }}
+            {{ form.sexo() }}
+        </p>
+
+        {% if form.sexo.errors %}
+            <ul class="errors">
+                {% for error in form.sexo.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p>
+            <input type="submit" value="Anadir">
+        </p>
+    </form>
+
+{% endblock %}

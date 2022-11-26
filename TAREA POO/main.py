@@ -1,0 +1,42 @@
+import vehiculo
+
+automovil = vehiculo.Automovil(15, "bmw", "BAT", 0, "blanco", "SH2355-CA")
+avion = vehiculo.Avion(1000, "boeing", "150", 0)
+tren = vehiculo.Tren(50, "TWM", "TC-523", 0)
+
+#encender
+print("--  Encender  --")
+print("\tautomovil:")
+automovil.encender()
+print("\t\tavion: ")
+avion.encender()
+print("\t\t tren: ")
+tren.encender()
+print("-----------------------------------")
+#avanzar
+print("--  AVANZAR  --")
+print("\n\tautomovil:")
+automovil.avanzar()
+print("\n\tavion: ")
+avion.avanzar()
+print("\n\ttren: ")
+tren.avanzar()
+print("-----------------------------------")
+print("--  Metodos especificos  --")
+#metodos especificos de clase
+print("\n\tautomovil:")
+automovil.vueltaIzq()
+automovil.vueltaDer()
+print("\n\tavion: ")
+avion.volar()
+print("\n\ttren: ")
+tren.pitar()
+print("-----------------------------------")
+print("--  funcion str  --")
+print("\n\tautomovil:")
+print(automovil.__str__())
+print("\n\tavion: ")
+print(avion.__str__())
+print("\n\ttren: ")
+print(tren.__str__())
+
